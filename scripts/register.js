@@ -35,7 +35,7 @@ btnsubmit.addEventListener('click',function(){
         */
        
         userArr.push(user);
-       console.log(userArr);
+    //    console.log(user.passWord.length);
        
         /**
          * 4. Thêm user vào mảng, lưu mảng vào localStorage
@@ -94,6 +94,32 @@ function userNameUnique(user){
     return true;
 }
 /**
+ * Password và confirm password phải giống nhau
+ * @param {*} user 
+ */
+function checkConfirmpwd(user){
+    if(inputpassword.value == inputpasswordconfirm.value){
+        return true; //kiểm tra giống thì true
+    }else{
+        alert("Password và confirm password phải giống nhau");
+        return false; // ngược lại thì false
+    }
+}
+/**
+ * Password có nhiều hơn 8 ký tự.
+ * @param {*} user 
+ */
+function checkPwd(user){
+
+    alert(inputpassword.length);
+    if(inputpassword.length <= 8){
+        alert('Password phải có nhiều hơn 8 ký tự');
+        return false;
+    }else{
+        return true;
+    }
+}
+/**
  * Hàm kiểm tra giá trị nhập đăng ký thành viên mới
  * @param {*} user mảng user nhập vào để kiểm tra
  * Không có trường nào bị bỏ trống. ==> ok
@@ -103,8 +129,9 @@ function userNameUnique(user){
  */
 function validate(user){
     if(    checkInput(user)
-        && userNameUnique(user)){
-        // alert(`kiểm tra validate - input ${checkInput(user)}`);
+        && userNameUnique(user)
+        && checkConfirmpwd(user)
+        && checkPwd(user)){
         return true;
     }else{
         return false; //tạo giá trị true để kiểm tra
