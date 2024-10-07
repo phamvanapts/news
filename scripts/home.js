@@ -1,2 +1,2 @@
 'use strict';
-alert("test home.js");
+// alert("test home.js");

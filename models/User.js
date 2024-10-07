@@ -2,7 +2,7 @@
 // alert("Test User.js");
 /**
  * Tạo lớp User
- * Trong lớp User có methor constructor chứa các thông tin cơ bản của User.
+ * Trong lớp User có method constructor chứa các thông tin cơ bản của User.
  */
 class User {
     constructor(firstName, lastName, userName, passWord){
