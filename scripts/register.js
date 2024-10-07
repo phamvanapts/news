@@ -111,8 +111,8 @@ function checkConfirmpwd(user){
  */
 function checkPwd(user){
 
-    alert(inputpassword.length);
-    if(inputpassword.length <= 8){
+    // alert(user.passWord.length);
+    if(user.passWord.length < 8){
         alert('Password phải có nhiều hơn 8 ký tự');
         return false;
     }else{
