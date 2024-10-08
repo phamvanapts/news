@@ -22,10 +22,20 @@ return JSON.parse(localStorage.getItem(key));
  */
 const users = getFromStorage('userArr')? getFromStorage('userArr') : [];
 /**
+ * Tạo và gán biến curentUser là mảng lấy từ localStorage hoặc rổng
+ * Lưu dữ liệu user đã login
+ */
+const curentUser = getFromStorage('curentUser')? getFromStorage('curentUser') : null;
+/**
  * Chuyển đổi về dạng Class Intance
  * Sẽ trả về một mảng chứa các intance của Class User
  */
 const userArr = users.map((user)=>parseUser(user));
+/**
+ * Hàm để chuyển từ JS Object sang Class Instance
+ * @param {*} userData 
+ * @returns mảng user
+ */
 function parseUser(userData){
     const user = new User(
         userData.firstName,
